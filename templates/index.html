@@ -1,29 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI LinkedIn Post Generator</title>
+    <title>Resume Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>AI-Powered LinkedIn Post Generator</h1>
-    
-    <h3>Trending Topics:</h3>
-    <ul>
-        {% for topic in topics %}
-        <li>{{ topic }}</li>
-        {% endfor %}
-    </ul>
-    
-    <form action="/" method="POST">
-        <label>Enter a topic:</label>
-        <input type="text" name="topic" required>
-        <button type="submit">Generate Post</button>
+    <h1>AI Resume Analyzer</h1>
+    <form action="/" method="post">
+        <textarea name="resume" rows="10" placeholder="Paste your resume here..."></textarea>
+        <br>
+        <button type="submit">Analyze</button>
     </form>
-
-    {% if generated_post %}
-    <h3>Generated LinkedIn Post:</h3>
-    <p>{{ generated_post }}</p>
-    {% endif %}
 </body>
 </html>
